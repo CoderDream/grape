@@ -21,6 +21,7 @@ public class PageAuthService {
 
     public static final String EMPTY_STRING = "";
     public static final String SPLIT_CHAR = ",";
+    public static final String SPLIT_INROW_CHAR = ":";
     public static final String USER_PREFIX = "users";
     public static final String ROLE_PREFIX = "roles";
     public static final String[] EMPTY_STRING_ARRAY = new String[0];
@@ -82,7 +83,7 @@ public class PageAuthService {
         }
         if (s.startsWith(USER_PREFIX)) {
             String substring = s.substring(USER_PREFIX.length() + 1, s.length() - 1);
-            return substring.split(SPLIT_CHAR);
+            return substring.split(SPLIT_INROW_CHAR);
         }
         return null;
     }
@@ -93,7 +94,7 @@ public class PageAuthService {
         }
         if (s.startsWith(ROLE_PREFIX)) {
             String substring = s.substring(ROLE_PREFIX.length() + 1, s.length() - 1);
-            return substring.split(SPLIT_CHAR);
+            return substring.split(SPLIT_INROW_CHAR);
         }
         return null;
     }
